@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MyClassLibrary;
 using System.Threading;
+using System.IO;
 
 namespace WindowsFormsLaba2
 {
@@ -25,6 +26,25 @@ namespace WindowsFormsLaba2
             _newBook = Book.GetSettings();
             _newClassBook = ClassBook.GetSettings();
         }
+        private int waitOperation()
+        {
+            int count = 0;
+            Thread.Sleep(2000);
+            return count;
+        }
+        private async void waitXML(string alertProcess, string alertSuccess)
+        {
+            Task<int> task1 = new Task<int>(waitOperation);
+            task1.Start();
+            lblAlert.Text = alertProcess;
+            await task1;
+            lblAlert.Text = alertSuccess;
+
+            Task<int> task2 = new Task<int>(waitOperation);
+            task2.Start();
+            await task2;
+            lblAlert.Hide();
+        }
 
         private void saveMagazXML_Click(object sender, EventArgs e)
         {          
@@ -37,17 +57,20 @@ namespace WindowsFormsLaba2
             _newMagazine.Edition = int.Parse(fldMagazEdit.Text);        
             _newMagazine.Save();
 
+            waitXML("Сохранение в XML. Пожалуйста, подождите...", "Успешно. XML сохранен");
         }
 
         private void uploadMagazXML_Click(object sender, EventArgs e)
         {
+
+            waitXML("Загрузка XML. Пожалуйста, подождите...", "XML успешно загружен");           
             fldMagazName.Text = _newMagazine.PublicationName;
             fldMagazMonth.Text = _newMagazine.Month;
             fldMagazNo.Text = _newMagazine.No.ToString();
             fldMagazPages.Text = _newMagazine.NumberOfPages.ToString();
             fldMagazHouse.Text = _newMagazine.PublishingHouseName;
             fldMagazYear.Text = _newMagazine.PublishingYear.ToString();
-            fldMagazEdit.Text = _newMagazine.Edition.ToString();
+            fldMagazEdit.Text = _newMagazine.Edition.ToString();          
         }
 
         private void saveBookXML_Click(object sender, EventArgs e)
@@ -62,10 +85,14 @@ namespace WindowsFormsLaba2
             _newBook.PublishingYear = int.Parse(fldBookYear.Text);
             _newBook.Edition = int.Parse(fldBookEdit.Text);
             _newBook.Save();
+
+            waitXML("Сохранение в XML. Пожалуйста, подождите...", "Успешно. XML сохранен"); ;
+
         }
 
         private void uploadBookXML_Click(object sender, EventArgs e)
         {
+            waitXML("Загрузка XML. Пожалуйста, подождите...", "XML успешно загружен");
             fldBookName.Text = _newBook.PublicationName;
             fldBookAuthor.Text = _newBook.Author;
             fldBookGenre.Text = _newBook.Genre;
@@ -86,10 +113,13 @@ namespace WindowsFormsLaba2
             _newClassBook.PublishingHouseName = fldClassBookHouse.Text;
             _newClassBook.Edition = int.Parse(fldClassBookEdit.Text);
             _newClassBook.Save();
+
+            waitXML("Сохранение в XML. Пожалуйста, подождите...", "Успешно. XML сохранен");
         }
 
         private void uploadClassBookXML_Click(object sender, EventArgs e)
         {
+            waitXML("Загрузка XML. Пожалуйста, подождите...", "XML успешно загружен");
             fldClassBookName.Text = _newClassBook.PublicationName;
             fldClassBookSubject.Text = _newClassBook.Subject;
             fldClassBookGrade.Text = _newClassBook.Grade.ToString();

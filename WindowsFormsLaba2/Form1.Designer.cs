@@ -77,12 +77,15 @@
             this.fldClassBookName = new System.Windows.Forms.TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.clearMagaz = new System.Windows.Forms.Label();
             this.uploadMagazXML = new System.Windows.Forms.Button();
             this.saveMagazXML = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.clearBook = new System.Windows.Forms.Label();
             this.uploadBookXML = new System.Windows.Forms.Button();
             this.saveBookXML = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.clearClassBook = new System.Windows.Forms.Label();
             this.uploadClassBookXML = new System.Windows.Forms.Button();
             this.saveClassBookXML = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -133,9 +136,6 @@
             this.lblClassBookGrade = new System.Windows.Forms.Label();
             this.lblClassBookSubject = new System.Windows.Forms.Label();
             this.lblAlert = new System.Windows.Forms.Label();
-            this.clearMagaz = new System.Windows.Forms.Label();
-            this.clearBook = new System.Windows.Forms.Label();
-            this.clearClassBook = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -572,7 +572,7 @@
             this.tabControl1.Location = new System.Drawing.Point(195, 41);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(650, 314);
+            this.tabControl1.Size = new System.Drawing.Size(650, 339);
             this.tabControl1.TabIndex = 59;
             // 
             // tabPage1
@@ -599,10 +599,22 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(642, 285);
+            this.tabPage1.Size = new System.Drawing.Size(642, 310);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Добавить журнал";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // clearMagaz
+            // 
+            this.clearMagaz.AutoSize = true;
+            this.clearMagaz.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.clearMagaz.ForeColor = System.Drawing.Color.Black;
+            this.clearMagaz.Location = new System.Drawing.Point(141, 201);
+            this.clearMagaz.Name = "clearMagaz";
+            this.clearMagaz.Size = new System.Drawing.Size(94, 15);
+            this.clearMagaz.TabIndex = 41;
+            this.clearMagaz.Text = "Очистить поля";
+            this.clearMagaz.Click += new System.EventHandler(this.clearMagaz_Click);
             // 
             // uploadMagazXML
             // 
@@ -662,6 +674,17 @@
             this.tabPage2.Text = "Добавить книгу";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // clearBook
+            // 
+            this.clearBook.AutoSize = true;
+            this.clearBook.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.clearBook.Location = new System.Drawing.Point(138, 257);
+            this.clearBook.Name = "clearBook";
+            this.clearBook.Size = new System.Drawing.Size(94, 15);
+            this.clearBook.TabIndex = 40;
+            this.clearBook.Text = "Очистить поля";
+            this.clearBook.Click += new System.EventHandler(this.clearBook_Click);
+            // 
             // uploadBookXML
             // 
             this.uploadBookXML.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(151)))), ((int)(((byte)(31)))));
@@ -713,6 +736,17 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Добавить учебник";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // clearClassBook
+            // 
+            this.clearClassBook.AutoSize = true;
+            this.clearClassBook.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.clearClassBook.Location = new System.Drawing.Point(141, 170);
+            this.clearClassBook.Name = "clearClassBook";
+            this.clearClassBook.Size = new System.Drawing.Size(94, 15);
+            this.clearClassBook.TabIndex = 61;
+            this.clearClassBook.Text = "Очистить поля";
+            this.clearClassBook.Click += new System.EventHandler(this.clearClassBook_Click);
             // 
             // uploadClassBookXML
             // 
@@ -1250,40 +1284,6 @@
             this.lblAlert.Name = "lblAlert";
             this.lblAlert.Size = new System.Drawing.Size(0, 15);
             this.lblAlert.TabIndex = 61;
-            // 
-            // clearMagaz
-            // 
-            this.clearMagaz.AutoSize = true;
-            this.clearMagaz.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.clearMagaz.ForeColor = System.Drawing.Color.Black;
-            this.clearMagaz.Location = new System.Drawing.Point(141, 201);
-            this.clearMagaz.Name = "clearMagaz";
-            this.clearMagaz.Size = new System.Drawing.Size(94, 15);
-            this.clearMagaz.TabIndex = 41;
-            this.clearMagaz.Text = "Очистить поля";
-            this.clearMagaz.Click += new System.EventHandler(this.clearMagaz_Click);
-            // 
-            // clearBook
-            // 
-            this.clearBook.AutoSize = true;
-            this.clearBook.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.clearBook.Location = new System.Drawing.Point(138, 257);
-            this.clearBook.Name = "clearBook";
-            this.clearBook.Size = new System.Drawing.Size(94, 15);
-            this.clearBook.TabIndex = 40;
-            this.clearBook.Text = "Очистить поля";
-            this.clearBook.Click += new System.EventHandler(this.clearBook_Click);
-            // 
-            // clearClassBook
-            // 
-            this.clearClassBook.AutoSize = true;
-            this.clearClassBook.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.clearClassBook.Location = new System.Drawing.Point(141, 170);
-            this.clearClassBook.Name = "clearClassBook";
-            this.clearClassBook.Size = new System.Drawing.Size(94, 15);
-            this.clearClassBook.TabIndex = 61;
-            this.clearClassBook.Text = "Очистить поля";
-            this.clearClassBook.Click += new System.EventHandler(this.clearClassBook_Click);
             // 
             // Form1
             // 
